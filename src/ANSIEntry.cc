@@ -16,7 +16,7 @@ void ANSIEntry::feed( char c ) {
 	   If this is not an ESC char, we must
 	   end now, and throw an error. */
 
-	if ( c != 0x1B ) {
+	if ( c == 0x1B ) {
 		/* Hex 1B is ESC */
 		ansi_next_state = &ansi_state_ANSIModephrase;
 	} else {
