@@ -22,7 +22,7 @@ int csivalue_int;
 
 void insert_parsed_int() {
 	ansi_state_CSIValue_parsed_ints.insert(
-		ansi_state_CSIValue_parsed_ints.begin(),
+		ansi_state_CSIValue_parsed_ints.end(),
 		csivalue_int
 	);
 	csivalue_int = CSI_EMPTY_VALUE;
