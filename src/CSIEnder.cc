@@ -13,6 +13,9 @@
 #include "CSIEnder.hh"
 #include "CSIValue.hh"
 #include "ANSIEntry.hh"
+#include "Parser.hh"
+
+char ansi_state_CSIEnder_parsed_mode;
 
 /* Some wikipedia background:
  * The final byte is technically any character in the range 64 to 126
@@ -23,6 +26,7 @@ void CSIEnder::feed( char c ) {
 	/* XXX: Implement leading bytes correctly */
 	if ( c >= 64 && c <= 126 ) {
 		/* We've parsed well */
+		ansi_state_CSIEnder_parsed_mode = c;
 		ansi_next_state = &ansi_state_ANSIEntry;
 	} else {
 		ansi_next_state = &ansi_state_InvalidState;
@@ -31,6 +35,11 @@ void CSIEnder::feed( char c ) {
 }
 
 void CSIEnder::enter() {}
-void CSIEnder::exit()  {}
+void CSIEnder::exit()  {
+	ansi_parser_last_parsed = new ansi_sequence();
+	ansi_parser_last_parsed->mode = ansi_state_CSIEnder_parsed_mode;
+	ansi_parser_last_parsed->values = 
+		new std::vector<int>(ansi_state_CSIValue_parsed_ints);
+}
 
 CSIEnder ansi_state_CSIEnder;

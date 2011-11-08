@@ -10,6 +10,8 @@
 
 #include "State.hh"
 
+extern char ansi_state_CSIEnder_parsed_mode;
+
 class CSIEnder : public State {
 	public:
 		virtual void feed ( char c );

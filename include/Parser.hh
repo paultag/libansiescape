@@ -3,12 +3,17 @@
 
 #include <vector>
 
-typedef struct _ansi_sequence {
-	char             mode;
-	std::vector<int> values; // XXX: Technically wrong
-} ansi_sequence;
+class ansi_sequence {
+	public:
+		ansi_sequence();
+		~ansi_sequence();
+		char               mode;
+		std::vector<int> * values;
+};
 
-void ansi_validate(       char * sequence );
-ansi_sequence ansi_parse( char * sequence );
+void ansi_validate( char * sequence );
+ansi_sequence * ansi_parse( char * sequence );
+
+extern ansi_sequence * ansi_parser_last_parsed;
 
 #endif
