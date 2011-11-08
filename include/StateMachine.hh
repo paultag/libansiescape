@@ -3,11 +3,11 @@
 
 #include "State.hh"
 
-extern State * csi_next_state;
+extern State * ansi_next_state;
 
-void csi_state_process( char c );
-void csi_state_init();
-void csi_state_flip();
+void ansi_state_process( char c );
+void ansi_state_init();
+void ansi_state_flip();
 
 #endif
 
