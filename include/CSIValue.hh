@@ -8,7 +8,11 @@
 #ifndef __CSIVALUE_HH
 #define __CSIVALUE_HH I_CAN_HAS
 
+#include <vector>
+
 #include "State.hh"
+
+extern std::vector<int>   ansi_state_CSIValue_parsed_ints;
 
 class CSIValue : public State {
 	public:

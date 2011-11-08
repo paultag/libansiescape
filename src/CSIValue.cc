@@ -10,6 +10,8 @@
 
 #include "Settings.hh"
 
+std::vector<int> ansi_state_CSIValue_parsed_ints;
+
 void CSIValue::feed( char c ) {
 	/* OK. C must be one of the following:
 	 *   0-9, ;
@@ -24,7 +26,6 @@ void CSIValue::feed( char c ) {
 	 *  Setting is in: Settings.hh/CSI_EMPTY_VALUE
 	 * 
 	 */
-
 }
 
 void CSIValue::enter() {
