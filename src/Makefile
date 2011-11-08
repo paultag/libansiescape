@@ -1,9 +1,6 @@
 CXX=g++
 
-LIBNAME=libansi
-#       ^^^^^^^ Is this taken?
-LIBMAJOR=1
-LIBMINOR=1.0.1
+include ../meta/libinf.mk
 
 CFLAGS=-Wall -c -fPIC 
 LDFLAGS=-shared -W1,-soname,$(LIBNAME).so.$(LIBMAJOR)
