@@ -1,13 +1,9 @@
 CXX=g++
 
-LIBNAME=libansi
-#       ^^^^^^^ Is this taken?
-LIBMAJOR=1
-LIBMINOR=1.0.1
-
-CFLAGS=-Wall -c -fPIC 
-LDFLAGS=-shared -W1,-soname,$(LIBNAME).so.$(LIBMAJOR)
+CFLAGS=-Wall
+LDFLAGS=-L$(LIB) -lansi
 LIB=../lib/
+BIN=../bin/
 INC=../include/
 
 TARGETS=$(shell ls *.cc | sed s/.cc/.o/g)
@@ -19,7 +15,7 @@ clean:
 	@rm -f *.o
 
 link:
-	$(CXX) $(TARGETS) $(LDFLAGS)  -o $(LIB)$(LIBNAME).so
+	$(CXX) $(TARGETS) $(LDFLAGS) -o $(BIN)ansi-csi-impl
 
 .cc.o:
 	$(CXX) $(CFLAGS) -I$(INC) -c -o $@ $<
