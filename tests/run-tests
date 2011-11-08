@@ -1,0 +1,16 @@
+#!/bin/bash
+
+for x in `ls tests/*`; do
+	echo -n "$x          "
+
+	SPEW=`./bin/invoke-binary < $x`
+	COMP=`cat results/$(basename $x)`
+	MD5SP=$(echo "$SPEW" | md5sum)
+	MD5SC=$(echo "$COMP" | md5sum)
+
+	if [ "x$MD5SP" == "x$MD5SC" ]; then
+		echo "[ pass ]"
+	else
+		echo "[ fail ]"
+	fi
+done
