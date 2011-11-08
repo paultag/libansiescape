@@ -8,6 +8,7 @@ typedef struct _ansi_sequence {
 	std::vector<int> values; // XXX: Technically wrong
 } ansi_sequence;
 
-void ansi_validate( char * sequence );
+void ansi_validate(       char * sequence );
+ansi_sequence ansi_parse( char * sequence );
 
 #endif
