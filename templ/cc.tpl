@@ -5,6 +5,8 @@
  * @created .DATE.
  */
 
+#include "StateMachine.hh"
+
 #include ".HHNAME."
 
 void .CLASSNAME.::feed( char c ) {
