@@ -4,15 +4,18 @@
 #include <exception>
 
 class ANSIException : public std::exception {
-	virtual const char * what() const throw();
+	public:
+		virtual const char * what() const throw();
 };
 
 class IncompleteParse : public ANSIException {
-	virtual const char * what() const throw();
+	public:
+		virtual const char * what() const throw();
 };
 
 class InvalidSequence : public ANSIException {
-	virtual const char * what() const throw();
+	public:
+		virtual const char * what() const throw();
 };
 
 #endif
