@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [ "x$1" == "x" ]; then
+	echo "Need a class name. Uppercase it, please"
+	exit 1
+fi
+
+ROOT=`dirname $0`
+
+CLASSNAME=$1
+UCASENAME=`echo $CLASSNAME | tr "a-z" "A-Z"`
+NFNAME="$CLASSNAME.hh"
+CFNAME="$CLASSNAME.cc"
+
+FILENAME=$NFNAME
+CLASSNAME=$CLASSNAME
+HHNAME=$NFNAME
+DATETIME=`date`
+
+HHTPL="`cat $ROOT/cc.tpl | \
+	sed s/\.CLASSNAME\./$CLASSNAME/g | \
+	sed s/\.HHNAME\./$HHNAME/g     | \
+	sed s/\.FILENAME\./$FILENAME/g   | \
+	sed \"s/\.DATE\./$DATETIME/g\"`"
+
+echo "$HHTPL"

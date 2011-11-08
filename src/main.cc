@@ -2,13 +2,13 @@
 #include <string.h>
 
 #include "StateMachine.hh"
-#include "EntryState.hh"
+#include "ANSIENtry.hh"
 
 
 using namespace std;
 
 int main ( int argc, char ** argv ) {
-	csi_next_state = &csi_entry_state;
+	csi_next_state = &state_ANSIEntry;
 	csi_state_init();
 	
 	char msg1[] = { 0x1B, '[', '2', 'J', '\0' };
