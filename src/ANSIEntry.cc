@@ -9,6 +9,7 @@
 #include "ANSIEntry.hh"
 #include "ANSIModephrase.hh"
 #include "InvalidState.hh"
+#include "Exception.hh"
 
 void ANSIEntry::feed( char c ) {
 	/* This is the start of the sequence.
@@ -21,6 +22,7 @@ void ANSIEntry::feed( char c ) {
 	} else {
 		/* XXX: Turn this into an "Invalid ANSI Sequence" */
 		ansi_next_state = &ansi_state_InvalidState;
+		throw new InvalidSequence();
 	}
 }
 
