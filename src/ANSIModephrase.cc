@@ -27,8 +27,11 @@ void ANSIModephrase::feed( char c ) {
 	if ( c == '[' ) {
 		/* OK. We've hit a CSI escape sequence. */
 		ansi_next_state = &ansi_state_CSIValue;
-	} else if ( c >= '@' && c <= '_' ) {
+	} else if ( c >= 64 && c <= 95 ) {
 		/* We've hit a private-mode escape sequence */
+		/* XXX: Implement the private-mode parsing */
+		ansi_next_state = &ansi_state_InvalidState;
+		throw new InvalidSequence();
 	} else {
 		/* We've hit garbage. */
 		ansi_next_state = &ansi_state_InvalidState;
