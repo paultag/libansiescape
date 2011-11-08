@@ -1,8 +1,12 @@
 CXX=g++
 
-CFLAGS=-Wall
-LDFLAGS=
-BIN=../bin/
+LIBNAME=libansi
+LIBMAJOR=1
+LIBMINOR=1.0.0
+
+CFLAGS=-Wall -c -fPIC 
+LDFLAGS=-shared -Wl,-soname,$(LIBNAME).so.$(LIBMAJOR)
+LIB=../lib/
 INC=../include/
 
 TARGETS=$(shell ls *.cc | sed s/.cc/.o/g)
@@ -15,7 +19,7 @@ clean:
 	@rm -f *.o
 
 link:
-	$(CXX) $(TARGETS) $(LDFLAGS) -o $(BIN)test
+	$(CXX) $(TARGETS) $(LDFLAGS)  -o $(LIB)$(LIBNAME).so.$(LIBMINOR)
 
 .cc.o:
 	$(CXX) $(CFLAGS) -I$(INC) -c -o $@ $<
