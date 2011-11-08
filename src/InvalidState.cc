@@ -1,12 +1,8 @@
 #include "InvalidState.hh"
-#include "StateMachine.hh"
+#include "Exception.hh"
 
 void InvalidState::feed( char c ) {
-	if ( c != 0x1B ) {
-		csi_next_state = &csi_invalid_state;
-	} else {
-		// csi_next_state = &csi_invalid_state;
-	}
+	throw new CIAException;
 }
 
 void InvalidState::enter() {
