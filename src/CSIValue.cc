@@ -18,6 +18,16 @@
 
 std::vector<int> ansi_state_CSIValue_parsed_ints;
 
+int csivalue_int;
+
+void insert_parsed_int() {
+	ansi_state_CSIValue_parsed_ints.insert(
+		ansi_state_CSIValue_parsed_ints.begin(),
+		csivalue_int
+	);
+	csivalue_int = CSI_EMPTY_VALUE;
+}
+
 void CSIValue::feed( char c ) {
 	/* OK. C must be one of the following:
 	 *   0-9, ;
@@ -33,9 +43,16 @@ void CSIValue::feed( char c ) {
 	 * 
 	 */
 	if ( c == ';' ) {
-
+		insert_parsed_int();
 	} else if ( c >= '0' && c <= '9' ) {
+		int pv = c - '0';
 
+		if ( csivalue_int == CSI_EMPTY_VALUE )  {
+			csivalue_int = pv;
+		} else {
+			csivalue_int = (csivalue_int * 10);
+			csivalue_int += pv;
+		}
 	} else {
 		/* Something that we don't know about. Pass it to the ender */
 		ansi_next_state = &ansi_state_CSIEnder;
@@ -45,11 +62,13 @@ void CSIValue::feed( char c ) {
 
 void CSIValue::enter() {
 	ansi_state_CSIValue_parsed_ints.clear();
+	csivalue_int = CSI_EMPTY_VALUE;
 }
 
 void CSIValue::exit() {
 	/* before we go (since it won't end on a ';') we must call
 	   the parse int routines one last time, and append. */
+	insert_parsed_int();
 }
 
 CSIValue ansi_state_CSIValue;
