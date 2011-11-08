@@ -5,6 +5,7 @@
  * @created Tue Nov  8 14:19:54 UTC 2011
  */
 
+#include "StateMachine.hh"
 #include "CSIValue.hh"
 
 void CSIValue::feed( char c ) {

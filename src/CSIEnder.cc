@@ -5,6 +5,7 @@
  * @created Tue Nov  8 14:20:09 UTC 2011
  */
 
+#include "StateMachine.hh"
 #include "CSIEnder.hh"
 
 void CSIEnder::feed( char c ) {

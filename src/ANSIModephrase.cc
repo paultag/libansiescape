@@ -5,6 +5,7 @@
  * @created Tue Nov  8 14:19:15 UTC 2011
  */
 
+#include "StateMachine.hh"
 #include "ANSIModephrase.hh"
 
 void ANSIModephrase::feed( char c ) {
