@@ -6,6 +6,8 @@
  */
 
 #include "StateMachine.hh"
+#include "Exception.hh"
+#include "CSIEnder.hh"
 #include "CSIValue.hh"
 
 #include "Settings.hh"
@@ -30,6 +32,15 @@ void CSIValue::feed( char c ) {
 	 *  Setting is in: Settings.hh/CSI_EMPTY_VALUE
 	 * 
 	 */
+	if ( c == ';' ) {
+
+	} else if ( c >= '0' && c <= '9' ) {
+
+	} else {
+		/* Something that we don't know about. Pass it to the ender */
+		ansi_next_state = &ansi_state_CSIEnder;
+		throw new IncompleteParse();
+	}
 }
 
 void CSIValue::enter() {
