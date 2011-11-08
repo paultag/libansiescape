@@ -1,5 +1,5 @@
 
-TEMPLATE=./templ
+TEMPLATE=./meta/templ
 SRC=./src
 INC=./include
 
