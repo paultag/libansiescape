@@ -1,7 +1,9 @@
 CXX=g++
 
+include ../meta/libinf.mk
+
 CFLAGS=-Wall
-LDFLAGS=-L$(LIB) -lansi
+LDFLAGS=-L$(LIB) -l$(LIBSHORT)
 LIB=../lib/
 BIN=../bin/
 INC=../include/
