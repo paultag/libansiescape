@@ -8,7 +8,7 @@ State * ansi_internal_state;
 void ansi_state_process( char c ) {
 	try {
 		ansi_next_state->feed( c );
-	} catch ( CIAIncompleteParse & e ) {
+	} catch ( IncompleteParse & e ) {
 		ansi_state_flip();
 		ansi_state_process( c );
 	}

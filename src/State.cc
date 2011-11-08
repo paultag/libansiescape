@@ -2,13 +2,13 @@
 #include "Exception.hh"
 
 void State::feed( char c ) {
-	throw new CIAException;
+	throw new ANSIException;
 }
 
 void State::enter() {
-	throw new CIAException;
+	throw new ANSIException;
 }
 
 void State::exit() {
-	throw new CIAException;
+	throw new ANSIException;
 }

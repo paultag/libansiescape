@@ -3,11 +3,15 @@
 
 #include <exception>
 
-class CIAException : public std::exception {
+class ANSIException : public std::exception {
 	virtual const char * what() const throw();
 };
 
-class CIAIncompleteParse : public CIAException {
+class IncompleteParse : public ANSIException {
+	virtual const char * what() const throw();
+};
+
+class InvalidSequence : public ANSIException {
 	virtual const char * what() const throw();
 };
 
