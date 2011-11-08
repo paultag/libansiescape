@@ -4,7 +4,7 @@ SRC=./src
 INC=./include
 
 all:
-	@echo "Stub"
+	@cd src && make
 
 newobj:
 	$(TEMPLATE)/gen-src $(name) > $(SRC)/$(name).cc
