@@ -20,7 +20,6 @@ void ANSIEntry::feed( char c ) {
 		/* Hex 1B is ESC */
 		ansi_next_state = &ansi_state_ANSIModephrase;
 	} else {
-		/* XXX: Turn this into an "Invalid ANSI Sequence" */
 		ansi_next_state = &ansi_state_InvalidState;
 		throw new InvalidSequence();
 	}

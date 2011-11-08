@@ -8,15 +8,10 @@
 #include "InvalidState.hh"
 
 void InvalidState::feed( char c ) {
-
+	/* Also known as the "Hotel California" State. */
 }
 
-void InvalidState::enter() {
-
-}
-
-void InvalidState::exit() {
-
-}
+void InvalidState::enter() {}
+void InvalidState::exit()  {}
 
 InvalidState ansi_state_InvalidState;

@@ -34,12 +34,7 @@ void ANSIModephrase::feed( char c ) {
 	}
 }
 
-void ANSIModephrase::enter() {
-
-}
-
-void ANSIModephrase::exit() {
-
-}
+void ANSIModephrase::enter() {}
+void ANSIModephrase::exit()  {}
 
 ANSIModephrase ansi_state_ANSIModephrase;
