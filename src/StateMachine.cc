@@ -14,9 +14,7 @@ void ansi_state_process( char c ) {
 	}
 
 	if ( ansi_next_state != ansi_internal_state ) {
-		ansi_internal_state->exit();
 		ansi_state_flip();
-		ansi_internal_state->enter();
 	}
 
 	if ( incomplete ) {
@@ -26,9 +24,12 @@ void ansi_state_process( char c ) {
 }
 
 void ansi_state_init() {
-	ansi_state_flip();
+	ansi_internal_state = ansi_next_state;
+	ansi_internal_state->enter();
 }
 
 void ansi_state_flip() {
+	ansi_internal_state->exit();
 	ansi_internal_state = ansi_next_state;
+	ansi_internal_state->enter();
 }
