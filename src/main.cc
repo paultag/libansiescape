@@ -11,7 +11,7 @@ int main ( int argc, char ** argv ) {
 	ansi_next_state = &ansi_state_ANSIEntry;
 	ansi_state_init();
 	
-	char msg1[] = { 0x1B, '[', '2', 'J', '\0' };
+	char msg1[] = { 0x1B, '[', '2', ';', '3', 'm', '\0' };
 	char msg2[] = { 0x1B, '[', 'H',      '\0' };
 	
 	for ( unsigned int i = 0; i < strlen( msg1 ); ++i )

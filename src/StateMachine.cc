@@ -6,12 +6,23 @@ State * ansi_next_state;
 State * ansi_internal_state;
 
 void ansi_state_process( char c ) {
+	bool incomplete = false;
 	try {
 		ansi_next_state->feed( c );
-	} catch ( IncompleteParse & e ) {
-		ansi_state_flip();
-		ansi_state_process( c );
+	} catch ( IncompleteParse * e ) {
+		incomplete = true;
 	}
+
+	if ( ansi_next_state != ansi_internal_state ) {
+		ansi_internal_state->exit();
+		ansi_state_flip();
+		ansi_internal_state->enter();
+	}
+
+	if ( incomplete ) {
+		ansi_state_process(c);
+	}
+
 }
 
 void ansi_state_init() {
