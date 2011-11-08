@@ -29,11 +29,12 @@ void CSIValue::feed( char c ) {
 }
 
 void CSIValue::enter() {
-
+	ansi_state_CSIValue_parsed_ints.clear();
 }
 
 void CSIValue::exit() {
-
+	/* before we go (since it won't end on a ';') we must call
+	   the parse int routines one last time, and append. */
 }
 
 CSIValue ansi_state_CSIValue;
