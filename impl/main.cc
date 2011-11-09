@@ -33,32 +33,7 @@ int main ( int argc, char ** argv ) {
 	std::string line;
 
 	while ( getline (cin,line) ) {
-
-		char * result = (char *)
-			malloc( sizeof(char) * line.length() +1 );
-
-		strcpy( result, line.c_str() );
-
-		try {
-			ansi_escape_parse_string( result );
-			ansi_sequence * seq1 = ansi_parser_last_parsed;
-
-			for (
-				unsigned int i = 0;
-				i < seq1->values->size();
-				++i
-			) {
-				cout << seq1->values->at(i) << ", ";
-			}
-
-			cout << "Major mode: " << seq1->mode;
-			cout << endl;
-
-			delete seq1;
-		} catch ( ANSIException * e ) {
-			std::cout << e->what() << std::endl;
-		}
-
-		free(result);
+		ansi_escape_parser_reset();
+		ansi_escape_parse_string( line );
 	}
 }

@@ -4,9 +4,11 @@
 #include "ansiescape/ANSIEntry.hh"
 #include "ansiescape/InvalidState.hh"
 #include "ansiescape/Exception.hh"
+#include "ansiescape/Parser.hh"
 
 #include <string.h>
 #include <malloc.h>
+#include <iostream>
 
 ANSI_ESCAPE_PARSE_T ansi_escape_parser_feed( char c ) {
 	try {
@@ -41,6 +43,18 @@ void ansi_escape_parse_string( const char * c ) {
 }
 
 void ansi_escape_parse_string( char * c ) {
-	for ( unsigned int i = 0; i < strlen(c); ++i )
-		ansi_state_process( c[i] );
+	for ( unsigned int i = 0; i < strlen(c); ++i ) {
+		ANSI_ESCAPE_PARSE_T p = ansi_escape_parser_feed( c[i] );
+		switch ( p ) {
+			case ANSI_ESCAPE_PARSE_OK:
+				std::cout << "OK" << std::endl;
+				break;
+			case ANSI_ESCAPE_PARSE_BAD:
+				std::cout << "BAD" << std::endl;
+				break;
+			case ANSI_ESCAPE_PARSE_INCOMPLETE:
+				std::cout << "INC" << std::endl;
+				break;
+		}
+	}
 }
