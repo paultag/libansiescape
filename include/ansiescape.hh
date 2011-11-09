@@ -10,6 +10,7 @@
 #define ANSI_ESCAPE_PARSE_T          int
 
 ANSI_ESCAPE_PARSE_T ansi_escape_parser_feed( char c );
+ansi_sequence   *   ansi_escape_get_last_sequence();
 
 void ansi_escape_parse_string( std::string  s );
 void ansi_escape_parse_string( char *       c );
