@@ -1,5 +1,8 @@
 #ifndef _ANSIESCAPE_HH_
-#define _ANSIESCAPE_HH_
+#define _ANSIESCAPE_HH_ foo
+
+#include <string>
+#include "Parser.hh"
 
 /* This header is to give folks a clean and simple facade to interface with
  * the ansi library. Hopefully we can keep this stable and maintainable. */
@@ -14,6 +17,6 @@ ansi_sequence   *   ansi_escape_get_last_sequence();
 
 void ansi_escape_parse_string( std::string  s );
 void ansi_escape_parse_string( char *       c );
-void ansi_escape_parse_string( const char * c
+void ansi_escape_parse_string( const char * c );
 
 #endif
