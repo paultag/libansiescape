@@ -40,5 +40,6 @@ void ansi_escape_parse_string( const char * c ) {
 }
 
 void ansi_escape_parse_string( char * c ) {
-
+	for ( unsigned int i = 0; i < strlen(c); ++i )
+		ansi_state_process( c[i] );
 }
