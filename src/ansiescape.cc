@@ -4,6 +4,9 @@
 #include "InvalidState.hh"
 #include "Exception.hh"
 
+#include <string.h>
+#include <malloc.h>
+
 ANSI_ESCAPE_PARSE_T ansi_escape_parser_feed( char c ) {
 	try {
 		ansi_state_process( c );
@@ -26,7 +29,7 @@ void ansi_escape_parser_reset() {
 }
 
 void ansi_escape_parse_string( std::string  s ) {
-
+	ansi_escape_parse_string( s.c_str() );
 }
 
 void ansi_escape_parse_string( char * c ) {
@@ -34,6 +37,10 @@ void ansi_escape_parse_string( char * c ) {
 }
 
 void ansi_escape_parse_string( const char * c ) {
+	char * to_parse = (char *)malloc(sizeof(char) * ( strlen(c) + 1));
+	strcpy( to_parse, c );
 
+
+	free(to_parse);
 }
 
