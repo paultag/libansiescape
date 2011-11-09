@@ -20,10 +20,10 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-#include "StateMachine.hh"
 #include "ANSIModephrase.hh"
-#include "Exception.hh"
+#include "StateMachine.hh"
 #include "InvalidState.hh"
+#include "Exception.hh"
 #include "CSIValue.hh"
 
 /* A bit of Wikipedia background:
