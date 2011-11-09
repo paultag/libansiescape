@@ -43,18 +43,19 @@ void ansi_escape_parse_string( const char * c ) {
 }
 
 void ansi_escape_parse_string( char * c ) {
+	ANSI_ESCAPE_PARSE_T p;
+
 	for ( unsigned int i = 0; i < strlen(c); ++i ) {
-		ANSI_ESCAPE_PARSE_T p = ansi_escape_parser_feed( c[i] );
-		switch ( p ) {
-			case ANSI_ESCAPE_PARSE_OK:
-				std::cout << "OK" << std::endl;
-				break;
-			case ANSI_ESCAPE_PARSE_BAD:
-				std::cout << "BAD" << std::endl;
-				break;
-			case ANSI_ESCAPE_PARSE_INCOMPLETE:
-				std::cout << "INC" << std::endl;
-				break;
-		}
+		p = ansi_escape_parser_feed( c[i] );
+		if ( p == ANSI_ESCAPE_PARSE_BAD )
+			throw new InvalidSequence();
+	}
+	switch ( p ) {
+		case ANSI_ESCAPE_PARSE_OK:
+			break;
+		case ANSI_ESCAPE_PARSE_BAD:
+			break;
+		case ANSI_ESCAPE_PARSE_INCOMPLETE:	
+			break;
 	}
 }

@@ -34,6 +34,25 @@ int main ( int argc, char ** argv ) {
 
 	while ( getline (cin,line) ) {
 		ansi_escape_parser_reset();
-		ansi_escape_parse_string( line );
+
+		try {
+			ansi_escape_parse_string( line );
+			ansi_sequence * seq1 = ansi_escape_get_last_sequence();
+
+			for (
+				unsigned int i = 0;
+				i < seq1->values->size();
+				++i
+			) {
+				cout << seq1->values->at(i) << ", ";
+			}
+
+			cout << "Major mode: " << seq1->mode;
+			cout << endl;
+
+			delete seq1;
+		} catch ( ANSIException * e ) {
+			std::cout << e->what() << std::endl;
+		}
 	}
 }
