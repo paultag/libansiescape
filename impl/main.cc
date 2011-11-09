@@ -24,8 +24,8 @@
 #include <string.h>
 #include <malloc.h>
 
-#include <Parser.hh>
-#include <Exception.hh>
+#include <ansiescape.hh>
+#include <ansiescape/Exception.hh>
 
 using namespace std;
 
@@ -40,7 +40,8 @@ int main ( int argc, char ** argv ) {
 		strcpy( result, line.c_str() );
 
 		try {
-			ansi_sequence * seq1 = ansi_parse( result );
+			ansi_escape_parse_string( result );
+			ansi_sequence * seq1 = ansi_parser_last_parsed;
 
 			for (
 				unsigned int i = 0;

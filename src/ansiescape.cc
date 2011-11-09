@@ -1,8 +1,9 @@
 #include "ansiescape.hh"
-#include "StateMachine.hh"
-#include "ANSIEntry.hh"
-#include "InvalidState.hh"
-#include "Exception.hh"
+
+#include "ansiescape/StateMachine.hh"
+#include "ansiescape/ANSIEntry.hh"
+#include "ansiescape/InvalidState.hh"
+#include "ansiescape/Exception.hh"
 
 #include <string.h>
 #include <malloc.h>

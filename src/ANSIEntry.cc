@@ -20,11 +20,11 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-#include "StateMachine.hh"
-#include "ANSIEntry.hh"
-#include "ANSIModephrase.hh"
-#include "InvalidState.hh"
-#include "Exception.hh"
+#include "ansiescape/StateMachine.hh"
+#include "ansiescape/ANSIEntry.hh"
+#include "ansiescape/ANSIModephrase.hh"
+#include "ansiescape/InvalidState.hh"
+#include "ansiescape/Exception.hh"
 
 void ANSIEntry::feed( char c ) {
 	/* This is the start of the sequence.

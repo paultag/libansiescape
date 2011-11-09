@@ -20,7 +20,7 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-#include "Exception.hh"
+#include "ansiescape/Exception.hh"
 
 const char * ANSIException::what() const throw() {
 	return "Generic CIA Exception";

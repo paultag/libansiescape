@@ -20,9 +20,9 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-#include "StateMachine.hh"
-#include "Exception.hh"
-#include "State.hh"
+#include "ansiescape/StateMachine.hh"
+#include "ansiescape/Exception.hh"
+#include "ansiescape/State.hh"
 
 State * ansi_next_state;
 State * ansi_internal_state;

@@ -22,13 +22,13 @@
 
 #include <iostream>
 
-#include "StateMachine.hh"
-#include "Exception.hh"
-#include "InvalidState.hh"
-#include "CSIEnder.hh"
-#include "CSIValue.hh"
-#include "ANSIEntry.hh"
-#include "Parser.hh"
+#include "ansiescape/StateMachine.hh"
+#include "ansiescape/Exception.hh"
+#include "ansiescape/InvalidState.hh"
+#include "ansiescape/CSIEnder.hh"
+#include "ansiescape/CSIValue.hh"
+#include "ansiescape/ANSIEntry.hh"
+#include "ansiescape/Parser.hh"
 
 char ansi_state_CSIEnder_parsed_mode;
 

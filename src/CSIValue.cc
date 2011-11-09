@@ -20,12 +20,12 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-#include "StateMachine.hh"
-#include "Exception.hh"
-#include "CSIEnder.hh"
-#include "CSIValue.hh"
+#include "ansiescape/StateMachine.hh"
+#include "ansiescape/Exception.hh"
+#include "ansiescape/CSIEnder.hh"
+#include "ansiescape/CSIValue.hh"
 
-#include "Settings.hh"
+#include "ansiescape/Settings.hh"
 
 /* The reason this is a CSIValue rather then an ANSIEscapeValue is because
  * ANSI private-mode values can be free-form, whereas the CSI values must be

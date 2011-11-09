@@ -20,7 +20,7 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-#include "InvalidState.hh"
+#include "ansiescape/InvalidState.hh"
 
 void InvalidState::feed( char c ) {
 	/* Also known as the "Hotel California" State. */

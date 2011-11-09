@@ -20,8 +20,8 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-#include "State.hh"
-#include "Exception.hh"
+#include "ansiescape/State.hh"
+#include "ansiescape/Exception.hh"
 
 void State::feed( char c ) {
 	throw new ANSIException;

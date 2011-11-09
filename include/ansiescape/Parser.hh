@@ -33,8 +33,6 @@ class ansi_sequence {
 		std::vector<int> * values;
 };
 
-ansi_sequence * ansi_parse( char * sequence );
-
 extern ansi_sequence * ansi_parser_last_parsed;
 
 #endif

@@ -20,11 +20,11 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-#include "ANSIModephrase.hh"
-#include "StateMachine.hh"
-#include "InvalidState.hh"
-#include "Exception.hh"
-#include "CSIValue.hh"
+#include "ansiescape/ANSIModephrase.hh"
+#include "ansiescape/StateMachine.hh"
+#include "ansiescape/InvalidState.hh"
+#include "ansiescape/Exception.hh"
+#include "ansiescape/CSIValue.hh"
 
 /* A bit of Wikipedia background:
  * Escape sequences start with the character ESC (ASCII decimal 27/hex
