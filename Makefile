@@ -12,6 +12,10 @@ prepare:
 	@rm -rf $(LIB)
 	@mkdir  $(LIB)
 
+clean:
+	@cd src   && make clean
+	@cd tests && make clean
+
 build:
 	@cd src   && make
 	@cd tests && make
