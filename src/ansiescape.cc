@@ -72,6 +72,7 @@ void ansi_escape_parse_string( char * c ) {
 		if ( p == ANSI_ESCAPE_PARSE_BAD )
 			throw new InvalidSequence();
 	}
+	
 	switch ( p ) {
 		case ANSI_ESCAPE_PARSE_OK:
 			break;
