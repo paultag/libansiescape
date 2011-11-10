@@ -2,7 +2,7 @@ TEMPLATE=./meta/templ
 SRC=./src/
 INC=./include/
 
-BIN=./bin/
+BIN=./tests/impl/
 LIB=./lib/
 
 include ./meta/libinf.mk
