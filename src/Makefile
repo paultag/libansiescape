@@ -24,5 +24,9 @@ install:
 link:
 	$(CXX) $(LDFLAGS) $(TARGETS) -o $(LIB)$(LIBNAME).so.$(LIBMINOR)
 
+translist:
+	@grep \&ansi_state_ . -r | grep -v ./ansiescape.cc | sed s/:.*\&/\ /g | \
+		sed s/ansi_state_//g | sed s/\;.*$$//g | sed 's/^\.\///g' | sed 's/\.cc//g'
+
 .cc.o:
 	$(CXX) $(CFLAGS) -I$(INC) -c -o $@ $<
