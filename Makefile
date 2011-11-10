@@ -6,7 +6,7 @@ LIB=./lib/
 
 include ./meta/libinf.mk
 
-all: prepare build
+all: prepare build test
 
 prepare:
 	@rm -rf $(LIB)
@@ -18,12 +18,14 @@ clean:
 
 build:
 	@cd src   && make
+
+test: build simlink
 	@cd tests && make
 
 install:
 	@cd src   && make install
 
-similink:
+simlink:
 	ln -s $(LIBNAME).so.$(LIBMINOR)  $(LIB)$(LIBNAME).so.$(LIBMAJOR)
 	ln -s $(LIBNAME).so.$(LIBMINOR)  $(LIB)$(LIBNAME).so
 
