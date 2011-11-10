@@ -2,8 +2,8 @@ CXX=g++
 
 include ../meta/libinf.mk
 
-CFLAGS=-Wall -c -fPIC 
-LDFLAGS=-shared -W1,-soname,$(LIBNAME).so.$(LIBMAJOR)
+CFLAGS=-Wall -c -fPIC
+LDFLAGS=-shared -Wl,-soname,$(LIBNAME).so.$(LIBMAJOR)
 LIB=../lib/
 INC=../include/
 
@@ -22,7 +22,7 @@ install:
 	cp -r $(LIB)* $(DESTDIR)/usr/lib/
 
 link:
-	$(CXX) $(TARGETS) $(LDFLAGS)  -o $(LIB)$(LIBNAME).so
+	$(CXX) $(LDFLAGS) $(TARGETS) -o $(LIB)$(LIBNAME).so
 
 .cc.o:
 	$(CXX) $(CFLAGS) -I$(INC) -c -o $@ $<
