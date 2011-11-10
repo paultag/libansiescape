@@ -22,7 +22,7 @@ install:
 	cp -r $(LIB)* $(DESTDIR)/usr/lib/
 
 link:
-	$(CXX) $(LDFLAGS) $(TARGETS) -o $(LIB)$(LIBNAME).so
+	$(CXX) $(LDFLAGS) $(TARGETS) -o $(LIB)$(LIBNAME).so.$(LIBMINOR)
 
 .cc.o:
 	$(CXX) $(CFLAGS) -I$(INC) -c -o $@ $<
