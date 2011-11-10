@@ -9,8 +9,8 @@ for x in `ls tests/*`; do
 	MD5SC=$(echo "$COMP" | md5sum)
 
 	if [ "x$MD5SP" == "x$MD5SC" ]; then
-		echo "[ pass ]"
+		echo "[ [32mpass[0m ]"
 	else
-		echo "[ fail ]"
+		echo "[ [31mfail[0m ]"
 	fi
 done
