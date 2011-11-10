@@ -1,12 +1,12 @@
 CXX=g++
 
-include ../meta/libinf.mk
+include ../../meta/libinf.mk
 
 CFLAGS=-Wall
 LDFLAGS=-L$(LIB) -l$(LIBSHORT)
-LIB=../lib/
-BIN=../tests/impl/
-INC=../include/
+LIB=../../lib/
+BIN=./
+INC=../../include/
 
 TARGETS=$(shell ls *.cc | sed s/.cc/.o/g)
 

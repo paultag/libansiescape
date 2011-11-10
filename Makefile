@@ -1,8 +1,7 @@
 TEMPLATE=./meta/templ
+
 SRC=./src/
 INC=./include/
-
-BIN=./tests/impl/
 LIB=./lib/
 
 include ./meta/libinf.mk
@@ -10,9 +9,8 @@ include ./meta/libinf.mk
 all: prepare build similink
 
 prepare:
-	@rm -rf $(BIN)
 	@rm -rf $(LIB)
-	@mkdir $(BIN) $(LIB)
+	@mkdir  $(LIB)
 
 build:
 	@cd src   && make
