@@ -6,7 +6,7 @@ LIB=./lib/
 
 include ./meta/libinf.mk
 
-all: prepare build similink
+all: prepare build
 
 prepare:
 	@rm -rf $(LIB)
