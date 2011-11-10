@@ -14,7 +14,6 @@ prepare:
 
 build:
 	@cd src   && make
-	@cd impl  && make
 	@cd tests && make
 
 similink:
