@@ -71,6 +71,7 @@ void ansi_escape_parse_string( char * c ) {
 		p = ansi_escape_parser_feed( c[i] );
 		if ( p == ANSI_ESCAPE_PARSE_BAD )
 			throw new InvalidSequence();
+		/*      ^^^^^^^ XXX: WTF? Fix this! */
 	}
 	
 	switch ( p ) {
