@@ -51,6 +51,10 @@ void CSIEnder::feed( char c ) {
 
 void CSIEnder::enter() {}
 void CSIEnder::exit()  {
+	
+	if ( ansi_parser_last_parsed != NULL )
+		delete ansi_parser_last_parsed;
+	
 	ansi_parser_last_parsed = new ansi_sequence();
 	ansi_parser_last_parsed->mode = ansi_state_CSIEnder_parsed_mode;
 	ansi_parser_last_parsed->values = 

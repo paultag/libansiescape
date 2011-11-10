@@ -26,7 +26,7 @@
 #include "ansiescape/ANSIEntry.hh"
 #include "ansiescape/StateMachine.hh"
 
-ansi_sequence * ansi_parser_last_parsed;
+ansi_sequence * ansi_parser_last_parsed = NULL;
 
 ansi_sequence::ansi_sequence() {
 	this->values = new std::vector<int>();

@@ -22,10 +22,13 @@
 
 #include "ansiescape/StateMachine.hh"
 #include "ansiescape/Exception.hh"
+#include "ansiescape/Parser.hh"
 #include "ansiescape/State.hh"
 
-State * ansi_next_state;
-State * ansi_internal_state;
+#include <cstddef>
+
+State * ansi_next_state     = NULL;
+State * ansi_internal_state = NULL;
 
 void ansi_state_process( char c ) {
 	bool incomplete = false;
