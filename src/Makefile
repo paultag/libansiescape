@@ -26,7 +26,8 @@ link:
 
 translist:
 	@grep \&ansi_state_ . -r | grep -v ./ansiescape.cc | sed s/:.*\&/\ /g | \
-		sed s/ansi_state_//g | sed s/\;.*$$//g | sed 's/^\.\///g' | sed 's/\.cc//g'
+		sed s/ansi_state_//g | sed s/\;.*$$//g | sed 's/^\.\///g' | sed 's/\.cc//g' \
+		| sort | uniq
 
 .cc.o:
 	$(CXX) $(CFLAGS) -I$(INC) -c -o $@ $<

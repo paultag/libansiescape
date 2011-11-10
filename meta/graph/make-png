@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./meta/graph/make-dot | dot -Goverlap=scale -Tpng > state-changes.png
