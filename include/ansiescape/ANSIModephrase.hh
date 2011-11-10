@@ -23,7 +23,7 @@
 #ifndef __ANSIMODEPHRASE_HH
 #define __ANSIMODEPHRASE_HH I_CAN_HAS
 
-#include "State.hh"
+#include <ansiescape/State.hh>
 
 class ANSIModephrase : public State {
 	public:

@@ -23,7 +23,7 @@
 #ifndef __ANSIENTRY_HH
 #define __ANSIENTRY_HH I_CAN_HAS
 
-#include "State.hh"
+#include <ansiescape/State.hh>
 
 class ANSIEntry : public State {
 	public:

@@ -23,7 +23,7 @@
 #ifndef _STATEMACHINE_HH_
 #define _STATEMACHINE_HH_ CAN_HAS
 
-#include "State.hh"
+#include <ansiescape/State.hh>
 
 extern State * ansi_next_state;
 

@@ -23,9 +23,9 @@
 #ifndef __CSIVALUE_HH
 #define __CSIVALUE_HH I_CAN_HAS
 
-#include <vector>
+#include <ansiescape/State.hh>
 
-#include "State.hh"
+#include <vector>
 
 extern std::vector<int>   ansi_state_CSIValue_parsed_ints;
 

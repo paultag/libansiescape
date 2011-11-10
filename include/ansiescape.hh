@@ -2,7 +2,7 @@
 #define _ANSIESCAPE_HH_ foo
 
 #include <string>
-#include "ansiescape/Parser.hh"
+#include <ansiescape/Parser.hh>
 
 /* This header is to give folks a clean and simple facade to interface with
  * the ansi library. Hopefully we can keep this stable and maintainable. */

@@ -23,7 +23,7 @@
 #ifndef __CSIENDER_HH
 #define __CSIENDER_HH I_CAN_HAS
 
-#include "State.hh"
+#include <ansiescape/State.hh>
 
 extern char ansi_state_CSIEnder_parsed_mode;
 

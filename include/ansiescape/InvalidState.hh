@@ -23,7 +23,7 @@
 #ifndef __INVALIDSTATE_HH
 #define __INVALIDSTATE_HH I_CAN_HAS
 
-#include "State.hh"
+#include <ansiescape/State.hh>
 
 class InvalidState : public State {
 	public:
