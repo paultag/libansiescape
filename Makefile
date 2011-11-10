@@ -20,6 +20,9 @@ build:
 	@cd src   && make
 	@cd tests && make
 
+install:
+	@cd src   && make install
+
 similink:
 	ln -s $(LIBNAME).so  $(LIB)$(LIBNAME).so.$(LIBMAJOR)
 	ln -s $(LIBNAME).so  $(LIB)$(LIBNAME).so.$(LIBMINOR)

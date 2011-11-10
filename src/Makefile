@@ -15,6 +15,12 @@ clean:
 	@echo "Removing all .o files."
 	@rm -f *.o
 
+install:
+	mkdir -p $(DESTDIR)/usr/include
+	mkdir -p $(DESTDIR)/usr/lib
+	cp -r $(INC)* $(DESTDIR)/usr/include/
+	cp -r $(LIB)* $(DESTDIR)/usr/lib/
+
 link:
 	$(CXX) $(TARGETS) $(LDFLAGS)  -o $(LIB)$(LIBNAME).so
 
