@@ -28,7 +28,7 @@
 
 #define _AUTHOR_  "Paul R. Tagliamonte <tag@pault.ag>"
 #define _YEAR_    "2011"
-#define _VERSION_ "0.9"
+#define _VERSION_ "1.0"
 
 /* OK. Now that legal stuff is all up on the top, we
    can do some of the more "fun" settings. */
