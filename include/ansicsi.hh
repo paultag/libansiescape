@@ -1,14 +1,14 @@
 #ifndef _ANSICSI_HH_
 #define _ANSICSI_HH_ CAN_HAS
 
-#define CSI_CUP    'A'
+#define CSI_CUU    'A'
 #define CSI_CUD    'B'
 #define CSI_CUF    'C'
 #define CSI_CUB    'D'
 #define CSI_CNL    'E'
 #define CSI_CPL    'F'
 #define CSI_CHA    'G'
-// #define CSI_CUP  /* XXX: Better solution, please */
+#define CSI_CUP    'H'
 #define CSI_ED     'J'
 #define CSI_EL     'K'
 #define CSI_SU     'S'
