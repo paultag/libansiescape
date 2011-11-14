@@ -31,4 +31,4 @@ simlink:
 
 newobj:
 	$(TEMPLATE)/gen-src $(name) > $(SRC)/$(name).cc
-	$(TEMPLATE)/gen-inc $(name) > $(INC)/$(name).hh
+	$(TEMPLATE)/gen-inc $(name) > $(INC)ansiescape/$(name).hh
