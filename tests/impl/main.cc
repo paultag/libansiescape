@@ -48,6 +48,7 @@ int main ( int argc, char ** argv ) {
 			}
 
 			cout << "Major mode: " << seq1->mode;
+			cout << " Private char: " << seq1->priv;
 			cout << endl;
 
 			delete seq1;

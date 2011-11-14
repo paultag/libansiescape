@@ -31,6 +31,9 @@ ansi_sequence * ansi_parser_last_parsed = NULL;
 ansi_sequence::ansi_sequence() {
 	this->values = new std::vector<int>();
 	this->mode   = 0x00;
+	this->priv   = ' ';
+	/* Since ' ' can not be a private mode */
+	/* XXX: Make this nicer. */
 }
 
 ansi_sequence::~ansi_sequence() {

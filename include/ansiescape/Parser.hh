@@ -30,6 +30,7 @@ class ansi_sequence {
 		ansi_sequence();
 		~ansi_sequence();
 		char               mode;
+		char               priv;
 		std::vector<int> * values;
 };
 
