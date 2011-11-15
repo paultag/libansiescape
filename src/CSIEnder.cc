@@ -25,6 +25,7 @@
 #include "ansiescape/StateMachine.hh"
 #include "ansiescape/Exception.hh"
 #include "ansiescape/InvalidState.hh"
+#include "ansiescape/CSIPrivateModephrase.hh"
 #include "ansiescape/CSIEnder.hh"
 #include "ansiescape/CSIValue.hh"
 #include "ansiescape/ANSIEntry.hh"
@@ -57,6 +58,8 @@ void CSIEnder::exit()  {
 	
 	ansi_parser_last_parsed = new ansi_sequence();
 	ansi_parser_last_parsed->mode = ansi_state_CSIEnder_parsed_mode;
+	ansi_parser_last_parsed->priv = 
+		ansi_state_CSIPrivateModephrase_parsed_private;
 	ansi_parser_last_parsed->values = 
 		new std::vector<int>(ansi_state_CSIValue_parsed_ints);
 }

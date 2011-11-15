@@ -33,5 +33,6 @@ class CSIPrivateModephrase : public State {
 };
 
 extern CSIPrivateModephrase ansi_state_CSIPrivateModephrase;
+extern char ansi_state_CSIPrivateModephrase_parsed_private;
 
 #endif

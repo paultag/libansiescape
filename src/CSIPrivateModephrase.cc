@@ -27,7 +27,9 @@
 
 void CSIPrivateModephrase::feed( char c ) {
 	if ( c == '?' ) {
-		// ansi_next_state = &ansi_state_DECValue;
+		/* We can parse DEC stuff as normal. */
+		ansi_state_CSIPrivateModephrase_parsed_private = c;
+		ansi_next_state = &ansi_state_CSIValue;
 	} else {
 		ansi_next_state = &ansi_state_CSIValue;
 		throw new IncompleteParse();
@@ -35,11 +37,10 @@ void CSIPrivateModephrase::feed( char c ) {
 }
 
 void CSIPrivateModephrase::enter() {
-
+	ansi_state_CSIPrivateModephrase_parsed_private = NULL;
 }
 
-void CSIPrivateModephrase::exit() {
-
-}
+void CSIPrivateModephrase::exit() {}
 
 CSIPrivateModephrase ansi_state_CSIPrivateModephrase;
+char  ansi_state_CSIPrivateModephrase_parsed_private;
