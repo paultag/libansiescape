@@ -48,7 +48,7 @@ int main ( int argc, char ** argv ) {
 			}
 
 			cout << "Major mode: " << seq1->mode;
-			if ( seq1->priv != NULL )
+			if ( seq1->priv )
 				cout << " Private char: " << seq1->priv;
 			cout << endl;
 
