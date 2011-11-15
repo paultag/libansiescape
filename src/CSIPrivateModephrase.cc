@@ -26,7 +26,12 @@
 #include "ansiescape/Exception.hh"
 
 void CSIPrivateModephrase::feed( char c ) {
-	if ( c == '?' ) {
+	if ( 
+		c == '?' ||
+		c == '#' ||
+		c == '>' ||
+		c == '!'
+	) {
 		/* We can parse DEC stuff as normal. */
 		ansi_state_CSIPrivateModephrase_parsed_private = c;
 		ansi_next_state = &ansi_state_CSIValue;
