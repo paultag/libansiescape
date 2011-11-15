@@ -22,9 +22,16 @@
 
 #include "ansiescape/StateMachine.hh"
 #include "ansiescape/CSIPrivateModephrase.hh"
+#include "ansiescape/CSIValue.hh"
+#include "ansiescape/Exception.hh"
 
 void CSIPrivateModephrase::feed( char c ) {
-
+	if ( c == '?' ) {
+		// ansi_next_state = &ansi_state_DECValue;
+	} else {
+		ansi_next_state = &ansi_state_CSIValue;
+		throw new IncompleteParse();
+	}
 }
 
 void CSIPrivateModephrase::enter() {

@@ -24,7 +24,7 @@
 #include "ansiescape/StateMachine.hh"
 #include "ansiescape/InvalidState.hh"
 #include "ansiescape/Exception.hh"
-#include "ansiescape/CSIValue.hh"
+#include "ansiescape/CSIPrivateModephrase.hh"
 
 /* A bit of Wikipedia background:
  * Escape sequences start with the character ESC (ASCII decimal 27/hex
@@ -41,7 +41,7 @@ void ANSIModephrase::feed( char c ) {
 	   a CSI entry, or a private-mode ANSI escape sequence */
 	if ( c == '[' ) {
 		/* OK. We've hit a CSI escape sequence. */
-		ansi_next_state = &ansi_state_CSIValue;
+		ansi_next_state = &ansi_state_CSIPrivateModephrase;
 	} else if ( c >= 64 && c <= 95 ) {
 		/* We've hit a private-mode escape sequence */
 		/* XXX: Implement the private-mode parsing */
