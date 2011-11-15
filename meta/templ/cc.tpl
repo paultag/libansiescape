@@ -20,9 +20,8 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-#include "StateMachine.hh"
-
-#include ".HHNAME."
+#include "ansiescape/StateMachine.hh"
+#include "ansiescape/.HHNAME."
 
 void .CLASSNAME.::feed( char c ) {
 

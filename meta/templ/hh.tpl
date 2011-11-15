@@ -23,7 +23,7 @@
 #ifndef .DEFNAME.
 #define .DEFNAME. I_CAN_HAS
 
-#include "State.hh"
+#include "ansiescape/State.hh"
 
 class .CLASSNAME. : public State {
 	public:
