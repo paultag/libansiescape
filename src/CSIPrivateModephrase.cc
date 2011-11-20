@@ -25,6 +25,8 @@
 #include "ansiescape/CSIValue.hh"
 #include "ansiescape/Exception.hh"
 
+#include <stdio.h> // XXX: Fix when not null
+
 void CSIPrivateModephrase::feed( char c ) {
 	if ( 
 		c == '?' ||
@@ -42,7 +44,7 @@ void CSIPrivateModephrase::feed( char c ) {
 }
 
 void CSIPrivateModephrase::enter() {
-	ansi_state_CSIPrivateModephrase_parsed_private = NULL;
+	ansi_state_CSIPrivateModephrase_parsed_private = 0;
 }
 
 void CSIPrivateModephrase::exit() {}

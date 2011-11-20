@@ -39,6 +39,7 @@ void ansi_state_process( char c ) {
 		/* The state at hand doesn't know how to
 		   deal with the current char, and it should
 		   be passed to the next state. */
+		delete e;
 		incomplete = true;
 	}
 

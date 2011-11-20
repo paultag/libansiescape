@@ -40,6 +40,7 @@ ANSI_ESCAPE_PARSE_T ansi_escape_parser_feed( char c ) {
 		}
 		return ANSI_ESCAPE_PARSE_INCOMPLETE;
 	} catch ( InvalidSequence * seq ) {
+		delete seq;
 		return ANSI_ESCAPE_PARSE_BAD;
 	}
 }
