@@ -53,34 +53,3 @@ void ansi_escape_parser_reset() {
 	ansi_next_state = &ansi_state_ANSIEntry;
 	ansi_state_init();
 }
-
-void ansi_escape_parse_string( std::string  s ) {
-	ansi_escape_parse_string( s.c_str() );
-}
-
-void ansi_escape_parse_string( const char * c ) {
-	char * to_parse = (char *)malloc(sizeof(char) * ( strlen(c) + 1));
-	strcpy( to_parse, c );
-	ansi_escape_parse_string( to_parse );
-	free(to_parse);
-}
-
-void ansi_escape_parse_string( char * c ) {
-	ANSI_ESCAPE_PARSE_T p;
-
-	for ( unsigned int i = 0; i < strlen(c); ++i ) {
-		p = ansi_escape_parser_feed( c[i] );
-		if ( p == ANSI_ESCAPE_PARSE_BAD )
-			throw new InvalidSequence();
-		/*      ^^^^^^^ XXX: WTF? Fix this! */
-	}
-	
-	switch ( p ) {
-		case ANSI_ESCAPE_PARSE_OK:
-			break;
-		case ANSI_ESCAPE_PARSE_BAD:
-			break;
-		case ANSI_ESCAPE_PARSE_INCOMPLETE:	
-			break;
-	}
-}

@@ -52,7 +52,6 @@ void CSIEnder::feed( char c ) {
 
 void CSIEnder::enter() {}
 void CSIEnder::exit()  {
-	
 	if ( ansi_parser_last_parsed != NULL )
 		delete ansi_parser_last_parsed;
 	

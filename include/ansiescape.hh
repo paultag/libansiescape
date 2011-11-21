@@ -75,28 +75,4 @@ ansi_sequence   *   ansi_escape_get_last_sequence();
  */
 void ansi_escape_parser_reset();
 
-/**
- * Parse a string into the sequence buffer. Keep in mind this will only return
- * the last sequence in a string with more then one ANSI escape sequence in it.
- * 
- * @param s std::string to parse.
- */
-void ansi_escape_parse_string( std::string  s );
-
-/**
- * Parse a string into the sequence buffer. Keep in mind this will only return
- * the last sequence in a string with more then one ANSI escape sequence in it.
- * 
- * @param c char string to parse.
- */
-void ansi_escape_parse_string( char *       c );
-
-/**
- * Parse a string into the sequence buffer. Keep in mind this will only return
- * the last sequence in a string with more then one ANSI escape sequence in it.
- * 
- * @param s const char string to parse.
- */
-void ansi_escape_parse_string( const char * c );
-
 #endif

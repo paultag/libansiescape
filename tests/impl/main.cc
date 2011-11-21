@@ -55,6 +55,7 @@ int main ( int argc, char ** argv ) {
 			delete seq1;
 		} catch ( ANSIException * e ) {
 			std::cout << e->what() << std::endl;
+			delete e;
 		}
 	}
 }
