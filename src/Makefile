@@ -2,7 +2,7 @@ CXX=g++
 
 include ../meta/libinf.mk
 
-CFLAGS=-Wall -c -fPIC
+CFLAGS=-Wall -c -fPIC -DANSIESCAPE_DEBUG=YES
 LDFLAGS=-shared -Wl,-soname,$(LIBNAME).so.$(LIBMAJOR)
 LIB=../lib/
 INC=../include/
