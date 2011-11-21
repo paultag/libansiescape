@@ -29,6 +29,25 @@
 
 using namespace std;
 
+ANSI_ESCAPE_PARSE_T parseString( std::string s ) {
+	ANSI_ESCAPE_PARSE_T res;
+	for ( unsigned int i = 0; i < s.length(); ++i ) {
+		char c = s[i];
+		res = ansi_escape_parser_feed( c );
+		switch ( res ) {
+			case ANSI_ESCAPE_PARSE_OK:
+				return res;
+				break;
+			case ANSI_ESCAPE_PARSE_BAD:
+				ansi_escape_parser_reset();
+				break;
+			case ANSI_ESCAPE_PARSE_INCOMPLETE:
+				break;
+		}
+	}
+	return res;
+}
+
 int main ( int argc, char ** argv ) {
 	std::string line;
 
@@ -36,7 +55,12 @@ int main ( int argc, char ** argv ) {
 		ansi_escape_parser_reset();
 
 		try {
-			ansi_escape_parse_string( line );
+			ANSI_ESCAPE_PARSE_T foo = parseString( line );
+
+			if ( foo == ANSI_ESCAPE_PARSE_INCOMPLETE ||
+			     foo == ANSI_ESCAPE_PARSE_BAD )
+				throw new InvalidSequence();
+
 			ansi_sequence * seq1 = ansi_escape_get_last_sequence();
 
 			for (
