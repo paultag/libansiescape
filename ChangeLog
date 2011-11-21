@@ -1,3 +1,9 @@
+2011-11-21  Paul Tagliamonte  <tag@pault.ag>
+
+* Releasing 1.2.
+* Debugging changes, some bugfixes and a new superclass that will let us check
+for basic memory leak stuff.
+
 2011-11-14  Paul Tagliamonte  <tag@pault.ag>
 
 * Releasing 1.1.
