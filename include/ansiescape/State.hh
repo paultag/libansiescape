@@ -23,7 +23,9 @@
 #ifndef _STATE_HH_
 #define _STATE_HH_ CAN_HAS
 
-class State {
+#include "ansiescape/ANSIEscapeSuperObject.hh"
+
+class State { //: public ANSIEscapeSuperObject {
 	public:
 		virtual void feed ( char c );
 		virtual void enter();

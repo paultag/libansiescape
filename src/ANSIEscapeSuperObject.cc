@@ -28,35 +28,25 @@
 #include <string>
 
 unsigned int ansi_escape_object_sequence = 1;
-bool         ansi_escape_initd = false;
-
 #define CLOG std::clog
 
-void init_clogging() {
-	std::string debug_log;
-#ifdef ANSIESCAPE_DEBUG
-	debug_log = "libansiescape.debug.log";
-#else
-	debug_log = "/dev/null";
-#endif
-	std::ofstream * ofs = new std::ofstream(debug_log.c_str());
-	std::clog.rdbuf(ofs->rdbuf());
-}
-
 ANSIEscapeSuperObject::ANSIEscapeSuperObject() {
-	if ( ! ansi_escape_initd )
-		init_clogging();
-
+#ifdef ANSIESCAPE_DEBUG
 	this->_ansi_escape_obj_id = ansi_escape_object_sequence;
 	ansi_escape_object_sequence++;
 
 	CLOG << "[alloc] " << this->_ansi_escape_obj_id << " C (OBJ)" << std::endl;
+#endif
 }
 
 ANSIEscapeSuperObject::~ANSIEscapeSuperObject() {
+#ifdef ANSIESCAPE_DEBUG
 	CLOG << "[alloc] " << this->_ansi_escape_obj_id << " D (OBJ)" << std::endl;
+#endif
 }
 
 void ANSIEscapeSuperObject::log( std::string s ) {
+#ifdef ANSIESCAPE_DEBUG
 	CLOG << "[debug] " << s << std::endl;
+#endif
 }

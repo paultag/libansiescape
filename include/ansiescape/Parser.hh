@@ -23,9 +23,10 @@
 #ifndef _PARSER_HH_
 #define _PARSER_HH_ I_CAN_HAS
 
+#include "ansiescape/ANSIEscapeSuperObject.hh"
 #include <vector>
 
-class ansi_sequence {
+class ansi_sequence : public ANSIEscapeSuperObject {
 	public:
 		ansi_sequence();
 		~ansi_sequence();
