@@ -1,3 +1,8 @@
+2011-11-22  Paul Tagliamonte  <tag@pault.ag>
+
+* Refactored the build process. Sync'd the buildprocess with libshibuya, we now have a
+fairly common build system. This will make maintaining the two much more simple.
+
 2011-11-21  Paul Tagliamonte  <tag@pault.ag>
 
 * Releasing 1.2.
