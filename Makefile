@@ -8,4 +8,9 @@ $(SUBDIRS):
 lib: src
 tests: lib
 
+install: $(SUBDIRS)
+	mkdir -p $(DESTDIR)/usr/include $(DESTDIR)/usr/lib
+	cp -r include/* $(DESTDIR)/usr/include/
+	cp -r lib/*     $(DESTDIR)/usr/lib/
+
 all: subdirs
