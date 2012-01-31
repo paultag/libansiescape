@@ -1,4 +1,4 @@
-SUBDIRS=src lib tests
+SUBDIRS=src lib # tests
 .PHONY: subdirs $(SUBDIRS)
      
 subdirs: $(SUBDIRS)

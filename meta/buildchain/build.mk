@@ -1,4 +1,4 @@
 .cc.o:
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
+	$(CXX) $(CXXFLAGS) -c -o $@ $< $(LDFLAGS)
 link:
-	$(CXX) $(LDFLAGS) $(TARGETS) -o $(OUTPUT)
+	$(CXX) $(TARGETS) -o $(OUTPUT) $(LDFLAGS)
